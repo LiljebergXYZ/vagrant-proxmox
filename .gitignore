@@ -21,6 +21,9 @@
 # Ignore generated coverage reports
 /coverage
 
+# Ignore DS_Store (for OSX)
+.DS_Store
+
 # IntelliJ
 .iws
 .idea/workspace.xml
