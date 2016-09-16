@@ -29,7 +29,7 @@ module VagrantPlugins
 								options[:host_ip] = node_ip
 								options[:host] = sprintf("22%03d", vm_id.to_i).to_i
 								env[:machine].config.ssh.host = node_ip
-								env[:machine].config.ssh.port = sprintf("22%03d", vm_id.to_i).to_s
+								env[:machine].config.ssh.port = sprintf("%d022", env[:machine].config.vm.networks.select { |type, _| type == :public_network }.first[1][:ip][-1, 1].to_i).to_s
 								break
 							end
 						end
